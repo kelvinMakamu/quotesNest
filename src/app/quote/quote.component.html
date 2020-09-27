@@ -8,22 +8,26 @@
     <div class="col-md-6 col-lg-6 col-sm-12" *ngFor='let quote of quotes'>
         <div class="quote-card">
             <div class="quote-header">
-                <p>{{quote.quote}}  &#x7e; <cite>{{quote.author}}</cite></p>
-                <div class="quote-votes">
-                    <button class="upvote btn btn-success btn-sm">Upvote</button>
-                    <button class="downvote btn btn-danger btn-sm">Downvote</button>
-                </div>
-            </div>
-            <div><br/></div>
-            <div class="quote-details">
                 <p>
-                    <span class="submitted-by">By: {{quote.submitted_by}}</span>
-                    <span class="date-submitted">{{quote.created_at| date}}</span>
+                    {{quote.quote}}  &#x7e; <cite>{{quote.author}}</cite><br/>
+                    <span class="elapsed-duration">(1 Week)</span>
                 </p>
-                <div><br/></div>
+                <div class="quote-votes">
+                    <button class="upvote btn btn-success btn-sm" (click)='upvoteQuote()'>Upvote</button>
+                    <button class="downvote btn btn-danger btn-sm" (click)='downvoteQuote()'>Downvote</button>
+                </div>
+                <div class="spacer"></div>
+            </div>
+            
+            <div class="quote-details spacer" style="display: none;">
                 <p>
                     <span class="submitted-by">{{quote.upvotes}} Upvotes</span>
                     <span class="date-submitted">{{quote.downvotes}} Downvotes</span>
+                </p>
+                <div class="spacer"></div>
+                <p>
+                    <span class="submitted-by">By: {{quote.submitted_by}}</span>
+                    <span class="date-submitted">{{quote.created_at| date}}</span>
                 </p>
             </div>
         </div>

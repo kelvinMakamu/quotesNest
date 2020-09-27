@@ -7,6 +7,7 @@ import { Quote } from '../quote';
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css']
 })
+
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [  
@@ -26,6 +27,14 @@ export class QuoteComponent implements OnInit {
     quote.created_at = new Date(quote.created_at);
     this.quotes.push(quote);
     this.quotes.reverse();
+  }
+
+  upvoteQuote(){
+    alert('UPvoted');
+  }
+
+  downvoteQuote(){
+    alert('Downvoted');
   }
 
   constructor() { }
