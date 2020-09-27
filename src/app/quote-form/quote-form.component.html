@@ -1,1 +1,52 @@
-<p>quote-form works!</p>
+<form #quoteForm='ngForm'>
+
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <h4>New Quote</h4>
+        <hr/>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="form-group">
+            <label>Quote</label>
+            <textarea name="quote" id="quote" rows="3" required
+             class="form-control" 
+             [(ngModel)]='model.quote' #quote='ngModel'></textarea>
+             <div [hidden]="quote.valid || quote.pristine"
+                    class="alert alert-danger">
+                Quote is required
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="form-group">
+            <label>Author</label>
+            <input type="text" name="author" class="form-control"
+             required id="author" [(ngModel)]='model.author'  #author='ngModel'/>
+             <div [hidden]="author.valid || author.pristine"
+                    class="alert alert-danger">
+                Author is required
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="form-group">
+            <label>Submitted By</label>
+            <input type="text" name="submitted_by" class="form-control"
+             required id="submitted_by" [(ngModel)]='model.submitted_by' #submitted_by='ngModel'/>
+             <div [hidden]="submitted_by.valid || submitted_by.pristine"
+                    class="alert alert-danger">
+                Submitted By is required
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="form-group">
+            <input type="submit" value="Add Quote" class="btn btn-success" id="btn-commit" 
+            (click)='createNewQuote();quoteForm.reset();' [disabled]="!quoteForm.form.valid"/>
+        </div>
+    </div>
+
+</form>
