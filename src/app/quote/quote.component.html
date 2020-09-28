@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12" *ngFor='let quote of quotes;let i = index;'
                  (mouseover)='displayQuoteDetails(i)' (mouseout)='hideQuoteDetails(i)'>
-                    <div class="quote-card" appHighlight>
+                    <div class="quote-card">
                         <div class="quote-header">
                             <div>
                                 <span class='deleteicon' (click)='deleteQuote(i)' title="Delete Quote"> &times;</span>
