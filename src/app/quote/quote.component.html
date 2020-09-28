@@ -17,13 +17,19 @@
                  (mouseover)='displayQuoteDetails(i)' (mouseout)='hideQuoteDetails(i)'>
                     <div class="quote-card">
                         <div class="quote-header">
-                            <p>
-                                {{quote.quote}}  &#x7e; <cite>{{quote.author}}</cite><br/>
-                                <span class="elapsed-duration">(1 Week)</span>
-                            </p>
+                            <div>
+                                <button class="btn btn-danger btn-sm delete-times" title="Delete Quote">
+                                 &times;</button>
+                            </div>
+                            <div>
+                                <p>
+                                    {{quote.quote}} <cite>&#x7e; {{quote.author}}</cite><br/>
+                                    <span class="elapsed-duration">(1 Week)</span>
+                                </p>
+                            </div>
                             <div class="quote-votes">
                                 <button class="upvote btn btn-success btn-sm" (click)='upvoteQuote(i)'>Upvote</button>
-                                <button class="downvote btn btn-danger btn-sm" (click)='downvoteQuote(i)'>Downvote</button>
+                                <button class="downvote btn btn-secondary btn-sm" (click)='downvoteQuote(i)'>Downvote</button>
                             </div>
                             <div class="spacer"></div>
                         </div>

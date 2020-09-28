@@ -33,14 +33,21 @@ a:hover {
   width: 100%;
   height: auto;
   line-height: 24px;
-  border-radius: 4px;
   margin: 2% 2% 5% 0%;
   background-color: #fff;
   border: 1px solid #eee;
   padding: 7.5% 7.5% 7.5% 7.5%;
+  border-radius: 15% !important;
   border-top:3px solid #439894;
   box-shadow: 0px 2px 3px #eee;
   transition: all 0.2s ease-in-out;
+}
+
+.delete-times{
+  right:5%;
+  top: 3.5%;
+  position: absolute;
+  border-radius: 50% !important;
 }
 
 .quote-header p{
@@ -50,7 +57,6 @@ a:hover {
 
 cite,.elapsed-duration,.quote-details{
   font-size: 12px;
-  font-style: italic;
   font-weight: lighter;
 }
 

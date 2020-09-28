@@ -2,6 +2,10 @@
     clear: both;
 }
 
+.spacer-divider{
+    margin-top: 5%;
+}
+
 .submitted-by{
     float: left;
 }
