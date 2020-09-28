@@ -1,4 +1,4 @@
-<form #quoteForm='ngForm' (ngSubmit)='createNewQuote();quoteForm.reset();'>
+<form #quoteForm='ngForm' (ngSubmit)='createNewQuote()'>
 
     <div class="col-md-12 col-lg-12 col-sm-12">
         <h4>New Quote</h4>
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label>Author</label>
             <input type="text" name="author" class="form-control"
-             required id="author" [(ngModel)]='model.author'  #author='ngModel'/>
+             required id="author" [(ngModel)]='model.author' #author='ngModel'/>
              <div [hidden]="author.valid || author.pristine"
                     class="alert alert-danger">
                 Author is required

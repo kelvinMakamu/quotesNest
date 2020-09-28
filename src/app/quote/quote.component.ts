@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { v4 as uuid } from 'uuid';
 import { Quote } from '../quote';
 
@@ -17,16 +18,15 @@ export class QuoteComponent implements OnInit {
     new Quote(uuid(),'Brand well', 'Linda',0,0,'Joyce',new Date(2007,9,14)),
   ];
 
-  addNewQuote(quote){
-    quote.id           = uuid();
-    quote.quote        = quote.quote;
-    quote.author       = quote.author;
-    quote.upvotes      = 0;
-    quote.downvotes    = 0;
-    quote.submitted_by = quote.submitted_by;
-    quote.created_at = new Date(quote.created_at);
-    this.quotes.push(quote);
-    this.quotes.reverse();
+  addNewQuote(quoted){
+    quoted.id           = uuid();
+    quoted.quote        = quoted.quote;
+    quoted.author       = quoted.author;
+    quoted.upvotes      = 0;
+    quoted.downvotes    = 0;
+    quoted.submitted_by = quoted.submitted_by;
+    quoted.created_at   = new Date(quoted.created_at);
+    this.quotes.unshift(quoted);
   }
 
   upvoteQuote(index: number){
@@ -43,6 +43,10 @@ export class QuoteComponent implements OnInit {
 
   hideQuoteDetails(index: number){
     this.quotes[index].showQuoteDetails = false;
+  }
+
+  deleteQuote(index: number){
+    alert(index);
   }
 
   constructor() { }

@@ -1,12 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 body{
-    background-color: #ffffff;
+    background-color: #ececec;
+    font-family: 'Roboto' !important;
 }
 
 *{
-    border-radius:unset !important;
     font-family: 'Roboto' !important;
+    border-radius:unset !important;
 }
 
 textarea {
