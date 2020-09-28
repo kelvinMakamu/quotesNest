@@ -1,189 +1,67 @@
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+h1,h2,h3,h4,h5,h6{
+  margin: 8px 0;
+}
+
+.card {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  box-shadow: 0px 2px 3px #eee;
+  background-color: #fff;
+  margin: 2% 2% 2% 0%;
+  padding: 5% 3% 5% 3%;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+}
+
+a,a:visited,a:hover {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #125699;
+}
+  
+@media screen and (max-width: 767px){
+  .card:not(.highlight-card) {
+    height: 16px;
     margin: 8px 0;
   }
-
-  p {
-    margin: 0;
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #5a8fc5;
-    color: white;
-    font-weight: 600;
-  }
-
-  .toolbar span {
-    margin: 0 16px;
-  }
-
-  .content {
-    display: flex;
-    margin: 7% auto 2% 2%;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-  }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
-  .card {
-    border-radius: 4px;
-    border: 1px solid #eee;
-    box-shadow: 0px 2px 3px #eee;
-    background-color: #fff;
-    margin: 2% 2% 2% 0%;
-    padding: 5% 3% 5% 3%;
-    transition: all 0.2s ease-in-out;
-    line-height: 24px;
-  }
-
-  .card-container .card:not(:last-child) {
-    margin-right: 0;
-  }
-
-  .card.card-small {
-    height: 16px;
-    width: 168px;
-  }
-
-  .card-container .card:not(.highlight-card) {
-    cursor: pointer;
-  }
-
-  .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-  }
-
-  .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(105, 103, 103);
-  }
-
-  .card.highlight-card {
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-    border: none;
-    width: auto;
-    min-width: 30%;
-    position: relative;
-  }
-
-  .card.card.highlight-card span {
-    margin-left: 60px;
-  }
-
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .circle-link {
-    height: 40px;
-    width: 40px;
-    border-radius: 40px;
-    margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
-  }
-
-  .circle-link:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-  }
-
-  footer a {
-    display: flex;
-    align-items: center;
-  }
+}
   
-  @media screen and (max-width: 767px){
-
-    .card-container > *:not(.circle-link) {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-  }.quote-card{
-    width: 100%;
-    height: auto;
-    line-height: 24px;
-    border-radius: 4px;
-    margin: 2% 2% 5% 0%;
-    background-color: #fff;
-    border: 1px solid #eee;
-    padding: 7.5% 7.5% 7.5% 7.5%;
-    border-top:3px solid #439894;
-    box-shadow: 0px 2px 3px #eee;
-    transition: all 0.2s ease-in-out;
+.quote-card{
+  width: 100%;
+  height: auto;
+  line-height: 24px;
+  border-radius: 4px;
+  margin: 2% 2% 5% 0%;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 7.5% 7.5% 7.5% 7.5%;
+  border-top:3px solid #439894;
+  box-shadow: 0px 2px 3px #eee;
+  transition: all 0.2s ease-in-out;
 }
 
 .quote-header p{
-    font-weight: 600;
-    text-align: center;
+  font-weight: 600;
+  text-align: center;
 }
 
 cite,.elapsed-duration,.quote-details{
-    font-size: 12px;
-    font-style: italic;
-    font-weight: lighter;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: lighter;
 }
 
 .spacer{
-    clear: both;
+  clear: both;
 }
 
 .upvote, .submitted-by{
-    float: left;
+  float: left;
 }
 
 .downvote, .date-submitted{
-    float: right;
+  float: right;
 }

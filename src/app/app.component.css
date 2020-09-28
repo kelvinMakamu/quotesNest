@@ -1,1 +1,28 @@
-  
+.spacer {
+ flex: 1;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #5a8fc5;
+    color: white;
+    font-weight: 600;
+}
+
+.toolbar span {
+    margin: 0 16px;
+}
+
+.content {
+    display: flex;
+    margin: 7% auto 2% 2%;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+}
