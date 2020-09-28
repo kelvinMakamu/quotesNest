@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { v4 as uuid } from 'uuid';
 import { Quote } from '../quote';
 
@@ -46,7 +46,10 @@ export class QuoteComponent implements OnInit {
   }
 
   deleteQuote(index: number){
-    alert(index);
+    let toDelete = confirm(`Are you sure you want to delete the quote: ${this.quotes[index].quote}?`)
+    if(toDelete){
+      this.quotes.splice(index,1);
+    }
   }
 
   constructor() { }
