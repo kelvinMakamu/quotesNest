@@ -17,7 +17,7 @@ export class QuoteComponent implements OnInit {
     new Quote(uuid(),'Brand well', 'Linda',0,0,'Joyce',new Date(2007,9,14)),
   ];
 
-  addNewQuote(quote){
+  addNewQuote(quote: Quote){
     quote.id           = uuid();
     quote.quote        = quote.quote;
     quote.author       = quote.author;

@@ -1,4 +1,4 @@
-<form #quoteForm='ngForm'>
+<form #quoteForm='ngForm' (ngSubmit)='createNewQuote();quoteForm.reset();'>
 
     <div class="col-md-12 col-lg-12 col-sm-12">
         <h4>New Quote</h4>
@@ -44,8 +44,8 @@
 
     <div class="col-md-12 col-lg-12 col-sm-12">
         <div class="form-group">
-            <input type="submit" value="Add Quote" class="btn btn-success" id="btn-commit" 
-            (click)='createNewQuote();quoteForm.reset();' [disabled]="!quoteForm.form.valid"/>
+            <input type="submit" value="Add Quote" class="btn btn-success" id="btn-commit"
+             [disabled]="!quoteForm.form.valid"/>
         </div>
     </div>
 
