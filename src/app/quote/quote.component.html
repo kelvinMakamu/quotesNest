@@ -18,17 +18,8 @@
                 </div>
                 <div class="spacer"></div>
             </div>
-            
-            <div class="quote-details spacer" style="display: none;">
-                <p>
-                    <span class="submitted-by">{{quote.upvotes}} Upvotes</span>
-                    <span class="date-submitted">{{quote.downvotes}} Downvotes</span>
-                </p>
-                <div class="spacer"></div>
-                <p>
-                    <span class="submitted-by">By: {{quote.submitted_by}}</span>
-                    <span class="date-submitted">{{quote.created_at| date}}</span>
-                </p>
+            <div class="quote-details spacer">
+                <app-quote-detail *ngIf='quote.showQuoteDetails' [quote]='quote'></app-quote-detail>
             </div>
         </div>
         

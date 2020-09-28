@@ -1,0 +1,11 @@
+.spacer{
+    clear: both;
+}
+
+.submitted-by{
+    float: left;
+}
+
+.date-submitted{
+    float: right;
+}
