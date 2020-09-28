@@ -29,12 +29,20 @@ export class QuoteComponent implements OnInit {
     this.quotes.reverse();
   }
 
-  upvoteQuote(){
-    alert('UPvoted');
+  upvoteQuote(index: number){
+    this.quotes[index].upvotes = this.quotes[index].upvotes + 1; 
   }
 
-  downvoteQuote(){
-    alert('Downvoted');
+  downvoteQuote(index: number){
+    this.quotes[index].downvotes = this.quotes[index].downvotes + 1; 
+  }
+
+  displayQuoteDetails(index: number){
+    this.quotes[index].showQuoteDetails = true;
+  }
+
+  hideQuoteDetails(index: number){
+    this.quotes[index].showQuoteDetails = false;
   }
 
   constructor() { }
