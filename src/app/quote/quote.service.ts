@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Quote } from '../quote';
 import { v4 as uuid } from 'uuid';
+import { Quote } from '../quote';
 
 @Injectable({
     providedIn: 'root'
@@ -8,10 +8,10 @@ import { v4 as uuid } from 'uuid';
 export class QuoteService{
 
     quotes: Quote[] = [  
-        new Quote(uuid(),'Watch finding Nemo', 'Geofrey',0,0,'Jackson',new Date(2019,9,14)),
-        new Quote(uuid(),'Graduating', 'Getrude',0,0,'Jared',new Date(2018,9,14)),
-        new Quote(uuid(),'Manipulating', 'Lincoln',0,0,'Jackline',new Date(2020,9,14)),
-        new Quote(uuid(),'Brand well', 'Linda',0,0,'Joyce',new Date(2007,9,14)),
+        new Quote(uuid(),'The greatest glory in living lies not in never falling, but in rising every time we fall.', 'Nelson Mandela',0,0,'Makamu Kelvin',new Date(2020,8,14)),
+        new Quote(uuid(),'The way to get started is to quit talking and begin doing.', 'Walt Disney',0,0,'Kelvin Makamu',new Date(2020,8,15)),
+        new Quote(uuid(),'If life were predictable it would cease to be life, and be without flavor.', 'Eleanor Roosevelt',0,0,'Makamu Kelvin',new Date(2020,8,16)),
+        new Quote(uuid(),'If you set your goals ridiculously high and it\'s a failure, you will fail above everyone else\'s success.', 'James Cameron',0,0,'Kelvin Makamu',new Date(2020,8,18)),
     ];
 
     getQuotes(){
@@ -31,7 +31,7 @@ export class QuoteService{
 
     toggleQuoteDetails(quote:any,show:boolean){
         const index = this.quotes.indexOf(quote);
-        if( index >= 0){
+        if(index >= 0){
             this.quotes[index].showQuoteDetails = show;
         }
     }
