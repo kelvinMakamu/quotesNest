@@ -5,14 +5,15 @@
                 <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
             </div>
         </div>
+        <!-- appHighlight -->
         <div class="col-md-8 col-lg-8 col-sm-12">
             <div class="row">
                 <div class="col-md-6 col-lg-6 col-sm-12" *ngFor='let quote of quotes;let i = index;'
-                 (mouseover)='displayQuoteDetails(i)' (mouseout)='hideQuoteDetails(i)'>
+                 (mouseover)='toggleDetails(quote,true)' (mouseout)='toggleDetails(quote,false)'>
                     <div class="quote-card">
                         <div class="quote-header">
                             <div>
-                                <span class='deleteicon' (click)='deleteQuote(i)' title="Delete Quote"> &times;</span>
+                                <span class='deleteicon' (click)='deleteQuote(quote)' title="Delete Quote"> &times;</span>
                             </div>
                             <div>
                                 <p>
@@ -21,8 +22,8 @@
                                 </p>
                             </div>
                             <div class="quote-votes">
-                                <button class="upvote btn btn-success btn-sm" (click)='upvoteQuote(i)'>Upvote</button>
-                                <button class="downvote btn btn-secondary btn-sm" (click)='downvoteQuote(i)'>Downvote</button>
+                                <button class="upvote btn btn-success btn-sm" (click)='voteQuote(quote,0)'>Upvote</button>
+                                <button class="downvote btn btn-secondary btn-sm" (click)='voteQuote(quote,1)'>Downvote</button>
                             </div>
                             <div class="spacer"></div>
                         </div>

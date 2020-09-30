@@ -7,8 +7,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-form.component.css']
 })
 export class QuoteFormComponent implements OnInit {
-  
-  model = new Quote('','','',0,0,'',new Date());
+  model = new Quote('', '','',0,0,'', new Date());
   @Output() addQuote = new EventEmitter<Quote>();
   createNewQuote(){
     this.addQuote.emit(this.model);
