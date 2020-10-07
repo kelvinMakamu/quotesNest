@@ -8,10 +8,10 @@ import { Quote } from '../quote';
 export class QuoteService{
 
     quotes: Quote[] = [  
-        new Quote(uuid(),'The greatest glory in living lies not in never falling, but in rising every time we fall.', 'Nelson Mandela',0,0,'Makamu Kelvin',new Date(2020,8,14)),
-        new Quote(uuid(),'The way to get started is to quit talking and begin doing.', 'Walt Disney',0,0,'Kelvin Makamu',new Date(2020,8,15)),
-        new Quote(uuid(),'If life were predictable it would cease to be life, and be without flavor.', 'Eleanor Roosevelt',0,0,'Makamu Kelvin',new Date(2020,8,16)),
-        new Quote(uuid(),'If you set your goals ridiculously high and it\'s a failure, you will fail above everyone else\'s success.', 'James Cameron',0,0,'Kelvin Makamu',new Date(2020,8,18)),
+        new Quote(uuid(),'The greatest glory in living lies not in never falling, but in rising every time we fall.', 'Nelson Mandela',0,0,'Makamu Kelvin',new Date(2020,8,14),false),
+        new Quote(uuid(),'The way to get started is to quit talking and begin doing.', 'Walt Disney',0,0,'Kelvin Makamu',new Date(2020,8,15),false),
+        new Quote(uuid(),'If life were predictable it would cease to be life, and be without flavor.', 'Eleanor Roosevelt',0,0,'Makamu Kelvin',new Date(2020,8,16),false),
+        new Quote(uuid(),'If you set your goals ridiculously high and it\'s a failure, you will fail above everyone else\'s success.', 'James Cameron',0,0,'Kelvin Makamu',new Date(2020,8,18),false),
     ];
 
     getQuotes(){
@@ -26,6 +26,7 @@ export class QuoteService{
         quote.downvotes    = 0;
         quote.submitted_by = quote.submitted_by;
         quote.created_at   = new Date(quote.created_at);
+        quote.isFavorite   = false;
         this.quotes.unshift(quote);
     }
 
@@ -41,7 +42,8 @@ export class QuoteService{
         if( index >= 0){
             switch(type){
                 case 0:
-                this.quotes[index].upvotes = this.quotes[index].upvotes + 1; 
+                this.quotes[index].upvotes = this.quotes[index].upvotes + 1;
+                this.rankQuotes(); 
                 break;
 
                 case 1:
@@ -49,6 +51,19 @@ export class QuoteService{
                 break;
             }
         }
+    }
+
+    rankQuotes(): void{
+        let upvoted: number   = Math.max.apply(Math,this.quotes.map(function(chosen){return chosen.upvotes;}));
+        let upvotedQuote: any = this.quotes.find(function(selected){ return selected.upvotes == upvoted; });
+        let favoriteIndex: number = this.quotes.indexOf(upvotedQuote);
+        this.quotes.map((quote)=>{
+            if(favoriteIndex === this.quotes.indexOf(quote)){
+                this.quotes[favoriteIndex].isFavorite = true;
+            }else{
+                quote.isFavorite = false;
+            }
+        });
     }
 
     deleteQuote(quote:any){
