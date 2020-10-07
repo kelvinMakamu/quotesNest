@@ -68,11 +68,12 @@ export class QuoteService{
 
     deleteQuote(quote:any){
         const index = this.quotes.indexOf(quote);
-        if( index>= 0){
+        if(index>= 0){
             let toDelete = confirm(`Are you sure you want to delete the quote: ${this.quotes[index].quote}?`)
             if(toDelete){
                 this.quotes.splice(index,1);
             }
         }
+        this.rankQuotes();
     }
 }
