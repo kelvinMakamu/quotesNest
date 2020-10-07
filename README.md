@@ -4,8 +4,9 @@
 
 QuotesNest is an application that allows users to add, delete, upvote and downvote quotes.
 The user provides the quote, author, and the individual who submitted the quote while creating a quote.
-Upvoting the quotes is done by clicking the button labelled 'upvote'. The quote with that is the most <br>
-upvoted is highlighted with a background colour of cyan.<br>
+Upvoting the quotes is done by clicking the button labelled 'upvote'. 
+Downvoting the quotes is done by clicking the button labelled 'Downvote'. 
+The quote that is the most upvoted is highlighted with a background colour of cyan.<br>
 
 The main functionalities are:<br>
 * Create a new quote
