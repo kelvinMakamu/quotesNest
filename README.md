@@ -1,14 +1,31 @@
-# Quotes
+# QuotesNest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+## Brief Description
 
-## Development server
+QuotesNest is an application that allows users to add, delete, upvote and downvote quotes.
+The user provides the quote, author, and the individual who submitted the quote while creating a quote.
+Upvoting the quotes is done by clicking the button labelled 'upvote'. The quote with that is the most <br>
+upvoted is highlighted with a background colour of cyan.<br>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The main functionalities are:<br>
+* Create a new quote
+* Upvote a quote
+* Downvote a quote
+* Delete a quote
+* Viewing the number of upvotes/downvotes for each quote.
 
-## Code scaffolding
+## Authors 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Kelvin Makamu](https://github.com/kelvinMakamu)
+
+## Set Up Instructions 
+
+To start using this project:
+
+* `git clone https://github.com/kelvinMakamu/quotesNest.git`
+* `cd quotesNest`
+* `npm install `
+* `ng serve` Navigate to `http://localhost:4200/`
 
 ## Build
 
@@ -22,6 +39,30 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* HTML5
+* CSS3
+* Bootstrap
+* TypeScript
+* GIT
+
+## Live Application
+
+* [QuotesNest](https://kelvinMakamu.github.io/quotesNest/)
+
+## Contact Information
+
+* [Kelvin Makamu](mailto:profmakamu@gmail.com?subject=[GitHub]%20Private%20and%20Confidential)
+
+## License And Copyright Information
+
+MIT License
+
+Copyright (c) 2020 QuotesNest
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
