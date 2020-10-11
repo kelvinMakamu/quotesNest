@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e44b6b09-c299-454f-8050-993791435c81/deploy-status)](https://app.netlify.com/sites/quotesnest/deploys)
 # QuotesNest
 
 ## Brief Description
@@ -51,6 +52,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Live Application
 
 * [QuotesNest](https://kelvinMakamu.github.io/quotesNest/)
+* [QuotesNest- Netlify](https://quotesnest.netlify.app/)
 
 ## Contact Information
 
