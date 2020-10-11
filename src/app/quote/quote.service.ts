@@ -31,47 +31,36 @@ export class QuoteService{
     }
 
     toggleQuoteDetails(quote:any,show:boolean){
-        const index = this.quotes.indexOf(quote);
-        if(index >= 0){
-            this.quotes[index].showQuoteDetails = show;
-        }
+        this.getQuotes().indexOf(quote) >= 0 ? this.getQuotes()[this.getQuotes().indexOf(quote)].showQuoteDetails = show : this.getQuotes()[this.getQuotes().indexOf(quote)].showQuoteDetails = false;
     }
 
     voteQuote(quote:any,type:number){
-        const index = this.quotes.indexOf(quote);
-        if( index >= 0){
-            switch(type){
-                case 0:
-                this.quotes[index].upvotes = this.quotes[index].upvotes + 1;
-                this.rankQuotes(); 
-                break;
-
-                case 1:
-                this.quotes[index].downvotes = this.quotes[index].downvotes + 1; 
-                break;
-            }
+        if(this.getQuotes().indexOf(quote) >= 0){
+            type === 0 ? this.getQuotes()[this.getQuotes().indexOf(quote)].upvotes++ : this.getQuotes()[this.getQuotes().indexOf(quote)].downvotes++;
+            this.rankQuotes(); 
         }
     }
 
     rankQuotes(): void{
-        let upvoted: number   = Math.max.apply(Math,this.quotes.map(function(chosen){return chosen.upvotes;}));
-        let upvotedQuote: any = this.quotes.find(function(selected){ return selected.upvotes == upvoted; });
-        let favoriteIndex: number = this.quotes.indexOf(upvotedQuote);
-        this.quotes.map((quote)=>{
-            if(favoriteIndex === this.quotes.indexOf(quote)){
-                this.quotes[favoriteIndex].isFavorite = true;
-            }else{
-                quote.isFavorite = false;
-            }
-        });
+        let upvoted: number   = Math.max.apply(Math,this.getQuotes().map(function(chosen){return chosen.upvotes;}));
+        if( upvoted > 0){
+            let upvotedQuote: any = this.getQuotes().find(function(selected){ return selected.upvotes == upvoted; });
+            let favIndex: number  = this.getQuotes().indexOf(upvotedQuote);
+            this.getQuotes().map((quote)=>{
+                if(favIndex === this.getQuotes().indexOf(quote)){
+                    this.quotes[favIndex].isFavorite = true;
+                }else{
+                    quote.isFavorite = false;
+                }
+            });
+        }
     }
 
     deleteQuote(quote:any){
-        const index = this.quotes.indexOf(quote);
-        if(index>= 0){
-            let toDelete = confirm(`Are you sure you want to delete the quote: ${this.quotes[index].quote}?`)
+        if(this.getQuotes().indexOf(quote)>= 0){
+            let toDelete = confirm(`Are you sure you want to delete the quote: ${this.quotes[this.quotes.indexOf(quote)].quote}?`)
             if(toDelete){
-                this.quotes.splice(index,1);
+                this.getQuotes().splice(this.getQuotes().indexOf(quote),1);
             }
         }
         this.rankQuotes();
